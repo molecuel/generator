@@ -1,5 +1,6 @@
-# generator-module [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> Molecuel module generator for core version 2.x
+# generator-module [![NPM version][npm-image]][npm-url]
+
+> Molecuel module generator for core version 2.x - Creates everything needed to get started with molecuel module development
 
 ## Installation
 
@@ -7,21 +8,14 @@ First, install [Yeoman](http://yeoman.io) and generator-module using [npm](https
 
 ```bash
 npm install -g yo
-npm install -g generator-module
+npm install -g @molecuel/generator-module
 ```
 
 Then generate your new project:
 
 ```bash
-yo module
+yo @molecuel/module
 ```
-
-## Getting To Know Yeoman
-
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
 
 ## License
 
