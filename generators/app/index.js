@@ -15,8 +15,8 @@ module.exports = Generator.extend({
       name: 'name',
       message: 'What should be the name of your module?',
       default: 'mymodule',
-      validate: x => x.length > 0 ? true : 'You have to provide a module name',
-    },{
+      validate: x => x.length > 0 ? true : 'You have to provide a module name'
+    }, {
       type: 'input',
       name: 'gaid',
       message: 'Do you have a google analytics ID for the Documentation?',
