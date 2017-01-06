@@ -29,7 +29,8 @@ describe('generator-module:app', function () {
       'Readme.md',
       '.travis.yml',
       'tsconfig.json',
-      'tslint.json'
+      'tslint.json',
+      '.npmignore'
     ]);
   });
 });
