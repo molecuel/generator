@@ -1,7 +1,8 @@
 'use strict';
-var Generator = require('yeoman-generator');
-var chalk = require('chalk');
-var yosay = require('yosay');
+const Generator = require('yeoman-generator');
+const chalk = require('chalk');
+const yosay = require('yosay');
+const validators = require('./validators');
 
 module.exports = Generator.extend({
   prompting: function () {
@@ -15,7 +16,7 @@ module.exports = Generator.extend({
       name: 'name',
       message: 'What should be the name of your module?',
       default: 'mymodule',
-      validate: x => x.length > 0 ? true : 'You have to provide a module name'
+      validate: validators.name
     }, {
       type: 'input',
       name: 'gaid',

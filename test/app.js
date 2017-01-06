@@ -1,14 +1,16 @@
 'use strict';
-var path = require('path');
-var assert = require('yeoman-assert');
-var helpers = require('yeoman-test');
+const path = require('path');
+const assert = require('yeoman-assert');
+const helpers = require('yeoman-test');
+const chalk = require('chalk');
+const validators = require('../generators/app/validators');
 
 describe('generator-module:app', function () {
   before(function () {
     return helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
-        name: true,
-        gaid: true
+        name: 'Hello',
+        gaid: 'UA-XXXX'
       })
       .toPromise();
   });
@@ -29,5 +31,19 @@ describe('generator-module:app', function () {
       'tsconfig.json',
       'tslint.json'
     ]);
+  });
+});
+
+describe('validators', () => {
+  describe('→ name', () => {
+    it('should accept a leading slash', () => {
+      assert.equal(validators.name('testname'), true);
+    });
+    it('should fail cause name is undefined', () => {
+      assert.equal(validators.name(), chalk.red('A module name is needed'));
+    });
+    it('should fail cause string is not long enough', () => {
+      assert.equal(validators.name(''), chalk.red('A module name is needed'));
+    });
   });
 });
