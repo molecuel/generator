@@ -11,4 +11,14 @@ validators.name = function (value) {
   return returnValue;
 };
 
+validators.category = function (value) {
+  let returnValue;
+  if (!value || !(value === 'core' || value === 'new_module')) {
+    returnValue = chalk.red('No valid generator category.');
+  } else {
+    returnValue = true;
+  }
+  return returnValue;
+};
+
 module.exports = validators;

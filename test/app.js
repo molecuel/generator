@@ -6,36 +6,83 @@ const chalk = require('chalk');
 const validators = require('../generators/app/validators');
 
 describe('generator-module:app', function () {
-  before(function () {
-    return helpers.run(path.join(__dirname, '../generators/app'))
-      .withPrompts({
-        name: 'Hello',
-        gaid: 'UA-XXXX'
-      })
-      .toPromise();
+  describe('module mode', function () {
+    before(function () {
+      return helpers.run(path.join(__dirname, '../generators/app'))
+        .withPrompts({
+          name: 'Hello',
+          gaid: 'UA-XXXX'
+        })
+        .toPromise();
+    });
+
+    it('creates files', function () {
+      assert.file([
+        'src/index.ts',
+        'tasks/gulpclass.ts',
+        'test/index.ts',
+        '.vscode/tasks.json',
+        '.editorconfig',
+        '.gitignore',
+        'gulpfile.ts',
+        'LICENSE',
+        'package.json',
+        'Readme.md',
+        '.travis.yml',
+        'tsconfig.json',
+        'tslint.json',
+        '.npmignore'
+      ]);
+    });
+  });
+  describe('core mode', function () {
+    before(function () {
+      return helpers.run(path.join(__dirname, '../generators/app'))
+        .withPrompts({
+          category: 'core'
+        })
+        .toPromise();
+    });
+
+    it('creates files', function () {
+      assert.file([
+        'src/index.ts',
+        'tasks/gulpclass.ts',
+        'test/index.ts',
+        '.vscode/tasks.json',
+        '.editorconfig',
+        '.gitignore',
+        'gulpfile.ts',
+        'LICENSE',
+        'package.json',
+        'Readme.md',
+        '.travis.yml',
+        'tsconfig.json',
+        'tslint.json',
+        '.npmignore',
+        'Dockerfile',
+        'config/development.json'
+      ]);
+    });
   });
 
-  it('creates files', function () {
-    assert.file([
-      'src/index.ts',
-      'tasks/gulpclass.ts',
-      'test/index.ts',
-      '.vscode/tasks.json',
-      '.editorconfig',
-      '.gitignore',
-      'gulpfile.ts',
-      'LICENSE',
-      'package.json',
-      'Readme.md',
-      '.travis.yml',
-      'tsconfig.json',
-      'tslint.json',
-      '.npmignore'
-    ]);
-  });
 });
 
 describe('validators', () => {
+  describe('→ category', () => {
+    it('should accept "core"', () => {
+      assert.equal(validators.category('core'), true);
+    });
+    it('should accept "new_module"', () => {
+      assert.equal(validators.category('core'), true);
+    });
+    it('should fail cause category is undefined', () => {
+      assert.equal(validators.category(), chalk.red('No valid generator category.'));
+    });
+    it('should fail cause category is anything else', () => {
+      assert.equal(validators.category('core module'), chalk.red('No valid generator category.'));
+    });
+  });
   describe('→ name', () => {
     it('should accept a leading slash', () => {
       assert.equal(validators.name('testname'), true);

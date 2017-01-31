@@ -13,6 +13,15 @@ module.exports = Generator.extend({
 
     var prompts = [{
       type: 'input',
+      name: 'category',
+      message: 'Do you want to generate a new module or get the core?',
+      default: 'new_module',
+      validate: validators.category
+    }, {
+      when: function (response) {
+        return response.category === 'new_module';
+      },
+      type: 'input',
       name: 'name',
       message: 'What should be the name of your module?',
       default: 'mymodule',
@@ -31,15 +40,12 @@ module.exports = Generator.extend({
   },
 
   writing: function () {
+    if (this.props.category === 'core') {
+      this.props.name = '@molecuel/core';
+    }
     this.destinationRoot(this.props.name);
-    this.fs.copyTpl(
-      this.templatePath('_package.json'),
-      this.destinationPath('package.json'),
-      {
-        name: this.props.name
-      }
-    );
-    if (this.props.name === 'core') {
+    if (this.props.category === 'core') {
+      this.props.name = '@molecuel/core';
       this.fs.copy(
         this.templatePath('_config/_development.json'),
         this.destinationPath('config/development.json')
@@ -49,6 +55,13 @@ module.exports = Generator.extend({
         this.destinationPath('Dockerfile')
       );
     }
+    this.fs.copyTpl(
+      this.templatePath('_package.json'),
+      this.destinationPath('package.json'),
+      {
+        name: this.props.name
+      }
+    );
     this.fs.copy(
       this.templatePath('_gitignore'),
       this.destinationPath('.gitignore')
