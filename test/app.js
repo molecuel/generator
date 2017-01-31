@@ -65,7 +65,6 @@ describe('generator-module:app', function () {
       ]);
     });
   });
-
 });
 
 describe('validators', () => {
