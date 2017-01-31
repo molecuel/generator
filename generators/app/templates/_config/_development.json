@@ -1,0 +1,16 @@
+{
+  "http": {
+    "routes": [
+      {
+        "url": "/someAddress/someFile",
+        "class": "someHandlerClass",
+        "property": "someHandlerMethod"
+      },
+      {
+        "url": "/someAddress/someModel/:id",
+        "class": "someHandlerClass",
+        "property": "someHandlerMethodWithParameter"
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+FROM node:6-alpine
+ADD dist /var/node/dist
+ADD config /var/node/config
+ADD node_modules /var/node/node_modules
+ADD package.json /var/node/
+EXPOSE 3000
+WORKDIR /var/node
+CMD ["npm", "start"]

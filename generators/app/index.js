@@ -39,6 +39,16 @@ module.exports = Generator.extend({
         name: this.props.name
       }
     );
+    if (this.props.name === 'core') {
+      this.fs.copy(
+        this.templatePath('_config/_development.json'),
+        this.destinationPath('config/development.json')
+      );
+      this.fs.copy(
+        this.templatePath('_Dockerfile'),
+        this.destinationPath('Dockerfile')
+      );
+    }
     this.fs.copy(
       this.templatePath('_gitignore'),
       this.destinationPath('.gitignore')
