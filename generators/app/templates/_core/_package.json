@@ -1,5 +1,6 @@
 {
-  "name": "<%= name %>",
+  "name": "@molecuel/core",
+  "description": "Core module for molecuel Application framework",
   "main": "dist/index.js",
   "scripts": {
     "test": "mocha",

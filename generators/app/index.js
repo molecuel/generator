@@ -40,9 +40,6 @@ module.exports = Generator.extend({
   },
 
   writing: function () {
-    if (this.props.category === 'core') {
-      this.props.name = '@molecuel/core';
-    }
     this.destinationRoot(this.props.name);
     if (this.props.category === 'core') {
       this.props.name = '@molecuel/core';
@@ -54,14 +51,30 @@ module.exports = Generator.extend({
         this.templatePath('_Dockerfile'),
         this.destinationPath('Dockerfile')
       );
+      this.fs.copy(
+        this.templatePath('_core/_package.json'),
+        this.destinationPath('package.json')
+      );
+      this.fs.copy(
+        this.templatePath('_core/_Readme.md'),
+        this.destinationPath('Readme.md')
+      );
+    } else {
+      this.fs.copyTpl(
+        this.templatePath('_package.json'),
+        this.destinationPath('package.json'),
+        {
+          name: this.props.name
+        }
+      );
+      this.fs.copyTpl(
+        this.templatePath('_Readme.md'),
+        this.destinationPath('Readme.md'),
+        {
+          name: this.props.name
+        }
+      );
     }
-    this.fs.copyTpl(
-      this.templatePath('_package.json'),
-      this.destinationPath('package.json'),
-      {
-        name: this.props.name
-      }
-    );
     this.fs.copy(
       this.templatePath('_gitignore'),
       this.destinationPath('.gitignore')
@@ -100,13 +113,6 @@ module.exports = Generator.extend({
     this.fs.copy(
       this.templatePath('_travis.yml'),
       this.destinationPath('.travis.yml')
-    );
-    this.fs.copyTpl(
-      this.templatePath('_Readme.md'),
-      this.destinationPath('Readme.md'),
-      {
-        name: this.props.name
-      }
     );
     this.fs.copy(
       this.templatePath('_tslint.json'),
