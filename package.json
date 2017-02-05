@@ -1,7 +1,7 @@
 {
-  "name": "@molecuel/generator-module",
-  "version": "0.0.4",
-  "description": "Molecuel module generator for core version 2.x",
+  "name": "@molecuel/generator-generator",
+  "version": "0.0.1",
+  "description": "Molecuel generator for core version 2.x",
   "homepage": "https://github.com/molecuel/",
   "author": {
     "name": "Dominic Böttger",
