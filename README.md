@@ -22,7 +22,7 @@ yo @molecuel/generator
 MIT © [Dominic Böttger]()
 
 
-[npm-image]: https://badge.fury.io/js/@molecuel/generator-generator.svg
+[npm-image]: https://badge.fury.io/js/%40molecuel%2Fgenerator-generator.svg
 [npm-url]: https://npmjs.org/package/@molecuel/generator-generator
 [travis-image]: https://travis-ci.org/molecuel/generator.svg?branch=master
 [travis-url]: https://travis-ci.org/molecuel/generator
