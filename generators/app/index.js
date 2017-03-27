@@ -42,7 +42,6 @@ module.exports = Generator.extend({
   writing: function () {
     this.destinationRoot(this.props.name);
     if (this.props.category === 'core') {
-      this.props.name = '@molecuel/core';
       this.fs.copy(
         this.templatePath('_config/_development.json'),
         this.destinationPath('config/development.json')

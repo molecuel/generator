@@ -1,6 +1,6 @@
 {
   "name": "@molecuel/generator-generator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Molecuel generator for core version 2.x",
   "homepage": "https://github.com/molecuel/",
   "author": {
