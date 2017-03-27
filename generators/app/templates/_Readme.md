@@ -2,7 +2,7 @@
 
 <%= name %> module for the Molecuel framework
 
-[npm-image]: https://badge.fury.io/js/@molecuel/<%= name %>.svg
+[npm-image]: https://badge.fury.io/js/%40molecuel%2F<%= name %>.svg
 [npm-url]: https://npmjs.org/package/@molecuel/<%= name %>
 [travis-image]: https://travis-ci.org/molecuel/<%= name %>.svg?branch=master
 [travis-url]: https://travis-ci.org/molecuel/<%= name %>

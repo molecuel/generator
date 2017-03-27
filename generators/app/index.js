@@ -64,7 +64,8 @@ module.exports = Generator.extend({
         this.templatePath('_package.json'),
         this.destinationPath('package.json'),
         {
-          name: this.props.name
+          name: this.props.name,
+          gaid: this.props.gaid
         }
       );
       this.fs.copyTpl(
@@ -82,17 +83,6 @@ module.exports = Generator.extend({
     this.fs.copy(
       this.templatePath('_npmignore'),
       this.destinationPath('.npmignore')
-    );
-    this.fs.copy(
-      this.templatePath('_gulpfile.ts'),
-      this.destinationPath('gulpfile.ts')
-    );
-    this.fs.copyTpl(
-      this.templatePath('_tasks/_gulpclass.ts'),
-      this.destinationPath('tasks/gulpclass.ts'),
-      {
-        gaid: this.props.gaid
-      }
     );
     this.fs.copy(
       this.templatePath('_test/_index.ts'),
@@ -130,8 +120,8 @@ module.exports = Generator.extend({
 
   install: function () {
     this.installDependencies({
-      npm: false,
-      yarn: true,
+      npm: true,
+      yarn: false,
       bower: false
     });
   }

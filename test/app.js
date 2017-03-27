@@ -19,12 +19,10 @@ describe('generator-module:app', function () {
     it('creates files', function () {
       assert.file([
         'src/index.ts',
-        'tasks/gulpclass.ts',
         'test/index.ts',
         '.vscode/tasks.json',
         '.editorconfig',
         '.gitignore',
-        'gulpfile.ts',
         'LICENSE',
         'package.json',
         'Readme.md',
@@ -47,12 +45,10 @@ describe('generator-module:app', function () {
     it('creates files', function () {
       assert.file([
         'src/index.ts',
-        'tasks/gulpclass.ts',
         'test/index.ts',
         '.vscode/tasks.json',
         '.editorconfig',
         '.gitignore',
-        'gulpfile.ts',
         'LICENSE',
         'package.json',
         'Readme.md',
