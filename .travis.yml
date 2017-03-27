@@ -1,4 +1,12 @@
 language: node_js
 node_js:
-  - v7
-  - v6
+- '6'
+- '7'
+deploy:
+  skip_cleanup: true
+  provider: npm
+  email: info@molecuel.org
+  api_key:
+    secure: dKPBYErhA84yLFDo0f40TXdcGY1nKL1S4VrrlG3OWAjEvVP9bNwkuToYaTx5z9lq7emOsSHcLZ70E0lkuagKSA7jdMN+dk+p4pbD5tCKFmK6ifxSAyj23gv9UOVNzZC+g3mdfVLkZufVbzlXOcL1hRUMGhFvcAkRW2aEM9xPo71Nz0KoM2lV0/vUHNhcPxne/yHOorTpjIDvNWTiQfrqczdllUyzXW+uxUplVNzxawsyalCXRZz/lHDi0K+5qnHgaPjpMeDwJ/nPIxrkW7tR69udiqQ4MLv2BQq8ChAFIbyQPeefQTRttGN45SMcLyL9xVB/q2HSDRCyW+xQ3lxnylq1PffjOUv1YhAZfgLZmJ1R5WxWUhscnC4nj5UR1Q6WQY6FpP76tJ7Rzk/O6hPr8bGBiDJ63w3OqcAWVbPpLph1LvvsS7fWGjer+KtYhm9KK5P+zCc5XjguqGYvssqqKpSBQjg6hN8XxKFJ2CRfe5g43uxPHFdqldRMvdEos+076IKFDASle6z0Fl6t6W1EzpNrJfVXMHauOiEFIGb9G5TxrS33fpj53FvxrVT2KZ6TVIJrG3IwJz4LGWFsCpWjp2Hj4mjuU3/hAOy+R6v4oXvcsR+3vjh3OTFV/6Wlm8SKVFINm07KvvpVDptid7SjRgO+n7CnV9/DfLoFbho1auY=
+  on:
+    repo: molecuel/generator
