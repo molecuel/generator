@@ -1,7 +1,11 @@
 language: node_js
 node_js:
-- '6'
-- '7'
+  - v7
+  - v6
+  - v5
+  - v4
+  - '0.12'
+after_script: 'cat ./coverage/lcov.info | coveralls'
 deploy:
   skip_cleanup: true
   provider: npm

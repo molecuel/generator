@@ -7,7 +7,7 @@ const validators = require('../generators/app/validators');
 
 describe('generator-module:app', function () {
   describe('module mode', function () {
-    before(function () {
+    beforeAll(function () {
       return helpers.run(path.join(__dirname, '../generators/app'))
         .withPrompts({
           name: 'Hello',
@@ -34,7 +34,7 @@ describe('generator-module:app', function () {
     });
   });
   describe('core mode', function () {
-    before(function () {
+    beforeAll(function () {
       return helpers.run(path.join(__dirname, '../generators/app'))
         .withPrompts({
           category: 'core'
