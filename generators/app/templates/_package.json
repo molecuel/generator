@@ -11,6 +11,7 @@
     "build_test": "npm run tslint_test && npm run ts_test",
     "build_all": "npm run build && npm run build_test",
     "mocha": "./node_modules/.bin/mocha",
+    "mocha_debug": "./node_modules/.bin/mocha --debug-brk",
     "test": "npm run build_test && npm run mocha",
     "cover": "istanbul cover ./node_modules/mocha/bin/_mocha && npm run remap && npm run remaphtml && npm run remaplcov",
     "remap": "./node_modules/.bin/remap-istanbul -i coverage/coverage.json -o coverage/coverage-remap.json",
@@ -28,15 +29,17 @@
     "@types/should": "^8.1.30",
     "@types/when": "^2.4.28",
     "assert": ">=0.0.1",
+    "chai": "^3.5.0",
     "coveralls": "^2.11.15",
     "del": "^2.2.0",
+    "fs-promise": "^2.0.3",
     "gh-pages": "^0.12.0",
     "istanbul": "^0.4.5",
     "mocha": "*",
     "mocha-lcov-reporter": "^1.2.0",
+    "nock": "^9.0.13",
     "publish": "^0.6.0",
     "remap-istanbul": "^0.9.3",
-    "should": ">=11.2.0",
     "tslint": "^5.0.0",
     "typedoc": "^0.5.1",
     "typescript": "^2.2.1"
@@ -46,6 +49,8 @@
     "@molecuel/di": "^0.2.0",
     "@reactivex/rxjs": "^5.2.0",
     "config": "^1.24.0",
-    "reflect-metadata": "^0.1.3"
+    "reflect-metadata": "^0.1.3",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4"
   }
 }

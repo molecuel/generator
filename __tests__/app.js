@@ -21,6 +21,7 @@ describe('generator-module:app', function () {
         'src/index.ts',
         'test/index.ts',
         '.vscode/tasks.json',
+        '.vscode/launch.json',
         '.editorconfig',
         '.gitignore',
         'LICENSE',
@@ -28,6 +29,7 @@ describe('generator-module:app', function () {
         'Readme.md',
         '.travis.yml',
         'tsconfig.json',
+        'tsconfig.test.json',
         'tslint.json',
         '.npmignore'
       ]);
@@ -47,6 +49,7 @@ describe('generator-module:app', function () {
         'src/index.ts',
         'test/index.ts',
         '.vscode/tasks.json',
+        '.vscode/launch.json',
         '.editorconfig',
         '.gitignore',
         'LICENSE',
@@ -55,6 +58,7 @@ describe('generator-module:app', function () {
         '.travis.yml',
         'tsconfig.json',
         'tslint.json',
+        'tsconfig.test.json',
         '.npmignore',
         'Dockerfile',
         'config/development.json'

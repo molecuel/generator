@@ -1,11 +1,13 @@
-'use strict';
-import 'reflect-metadata';
-import should = require('should');
-import assert = require('assert');
-import {di, injectable} from '@molecuel/di';
-import {Subject, Observable} from '@reactivex/rxjs';
-should();
+import "reflect-metadata";
 
-describe('<%= name %>', function() {
+import * as chai from "chai";
+const should = chai.should;
+const expect = chai.expect;
+const assert = chai.assert;
+
+import {MlclCore} from "@molecuel/core";
+import {di, injectable} from "@molecuel/di";
+
+describe("<%= name %>", function() {
 
 }); // test end

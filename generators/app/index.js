@@ -96,6 +96,10 @@ module.exports = Generator.extend({
       this.destinationPath('.vscode/tasks.json')
     );
     this.fs.copy(
+      this.templatePath('_vscode/_launch.json'),
+      this.destinationPath('.vscode/launch.json')
+    );
+    this.fs.copy(
       this.templatePath('_editorconfig'),
       this.destinationPath('.editorconfig')
     );
@@ -110,6 +114,10 @@ module.exports = Generator.extend({
     this.fs.copy(
       this.templatePath('_tsconfig.json'),
       this.destinationPath('tsconfig.json')
+    );
+    this.fs.copy(
+      this.templatePath('_tsconfig.test.json'),
+      this.destinationPath('tsconfig.test.json')
     );
     this.fs.copy(
       this.templatePath('_LICENSE'),

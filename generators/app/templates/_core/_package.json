@@ -1,5 +1,5 @@
 {
-  "name": "@molecuel/core",
+  "name": "<%= name %>",
   "description": "Core module for molecuel Application framework",
   "main": "dist/index.js",
   "scripts": {
@@ -37,7 +37,7 @@
     "mocha-lcov-reporter": "^1.2.0",
     "publish": "^0.6.0",
     "remap-istanbul": "^0.9.3",
-    "should": ">=11.2.0",
+    "chai": "^3.5.0",
     "tslint": "^4.4.2",
     "typedoc": "^0.5.1",
     "typescript": "^2.2.1"
