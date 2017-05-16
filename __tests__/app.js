@@ -18,7 +18,7 @@ describe('generator-module:app', function () {
 
     it('creates files', function () {
       assert.file([
-        'src/index.ts',
+        'lib/index.ts',
         'test/index.ts',
         '.vscode/tasks.json',
         '.vscode/launch.json',
@@ -29,7 +29,6 @@ describe('generator-module:app', function () {
         'Readme.md',
         '.travis.yml',
         'tsconfig.json',
-        'tsconfig.test.json',
         'tslint.json',
         '.npmignore'
       ]);
@@ -46,7 +45,7 @@ describe('generator-module:app', function () {
 
     it('creates files', function () {
       assert.file([
-        'src/index.ts',
+        'lib/index.ts',
         'test/index.ts',
         '.vscode/tasks.json',
         '.vscode/launch.json',
@@ -58,7 +57,6 @@ describe('generator-module:app', function () {
         '.travis.yml',
         'tsconfig.json',
         'tslint.json',
-        'tsconfig.test.json',
         '.npmignore',
         'Dockerfile',
         'config/development.json'
