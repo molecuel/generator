@@ -8,11 +8,11 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "outDir": "dist/"
+    "emitDecoratorMetadata": true
   },
   "include": [
-      "src/**/*"
+      "lib/**/*",
+      "test/**/*"
   ],
   "exclude": [
       "node_modules",

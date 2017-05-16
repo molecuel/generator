@@ -10,6 +10,7 @@
     "build": "npm run tslint && npm run ts",
     "build_test": "npm run tslint_test && npm run ts_test",
     "build_all": "npm run build && npm run build_test",
+    "build_only": " npm run ts && npm run ts_test",
     "mocha": "./node_modules/.bin/mocha",
     "mocha_debug": "./node_modules/.bin/mocha --debug-brk",
     "test": "npm run build_test && npm run mocha",
