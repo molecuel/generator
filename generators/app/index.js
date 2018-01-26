@@ -4,8 +4,9 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 const validators = require('./validators');
 
-module.exports = Generator.extend({
-  prompting: function () {
+module.exports = class MolecuelGenerator extends Generator {
+
+  prompting() {
     // Have Yeoman greet the user.
     this.log(yosay(
       'Welcome to the ' + chalk.red('Molecuel module') + ' generator!'
@@ -37,9 +38,9 @@ module.exports = Generator.extend({
       // To access props later use this.props.someAnswer;
       this.props = props;
     }.bind(this));
-  },
+  }
 
-  writing: function () {
+  writing() {
     this.destinationRoot(this.props.name);
     if (this.props.category === 'core') {
       this.fs.copy(
@@ -119,13 +120,13 @@ module.exports = Generator.extend({
       this.templatePath('_LICENSE'),
       this.destinationPath('LICENSE')
     );
-  },
+  }
 
-  install: function () {
+  install() {
     this.installDependencies({
       npm: true,
       yarn: false,
       bower: false
     });
   }
-});
+};
