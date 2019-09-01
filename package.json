@@ -27,7 +27,7 @@
     "jest": "^21.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^2.0.2",
+    "yeoman-generator": "^4.0.2",
     "chalk": "^2.0.0",
     "yosay": "^2.0.0"
   },
