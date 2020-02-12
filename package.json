@@ -22,7 +22,7 @@
     "eslint": "^3.18.0",
     "coveralls": "^3.0.0",
     "nsp": "^3.0.0",
-    "eslint-config-xo-space": "^0.17.0",
+    "eslint-config-xo-space": "^0.24.0",
     "jest-cli": "^21.0.0",
     "jest": "^21.0.0"
   },
